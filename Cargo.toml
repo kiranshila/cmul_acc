@@ -1,0 +1,22 @@
+[package]
+name = "cmul_acc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+num-complex = { version = "0.4", features = ["rand"] }
+pulp = { version = "0.21", features = ["nightly"] }
+rand = "0.8"
+
+[dev-dependencies]
+divan = "0.1"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[profile.release]
+lto = "fat"
+
+[profile.dev]
+lto = "fat"
